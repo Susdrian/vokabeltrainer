@@ -1,0 +1,9 @@
+<div id="card">
+  <button *ngIf="editAllowed" id="delete" (click)="deleteCard()">Delete</button>
+  <button *ngIf="editAllowed" id="edit" (click)="editCard()">Edit</button>
+  <h3>{{ card.front }} - {{ card.back }}</h3>
+  <div id="stat" *ngIf="stat">
+      <h3>{{ stat.correct }}/{{ stat.shown}} mal richtig</h3>
+    <button (click)="reset()">Statistik zurücksetzen</button>
+  </div>
+</div>

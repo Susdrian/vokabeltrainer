@@ -1,0 +1,9 @@
+POST localhost:7000/api/stats
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "cardId": 5,
+  "shown": 0,
+  "correct": 0
+}

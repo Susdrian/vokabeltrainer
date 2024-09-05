@@ -1,0 +1,179 @@
+#firstline {
+  display: flex;
+  justify-content: space-between;
+  padding: 7px 7px 0 7px;
+}
+.red {
+  width: 107px;
+  height: 40px;
+  padding: 0 10px 0 10px;
+  background: #E61610;
+  color: #FFFFFF;
+  border-color: #FFFFFF;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 5px 5px 5px 5px;
+  font-family: "Helvetica", serif;
+  font-weight: 400;
+  font-size: 14px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.red:hover {
+  background: #b8110d;
+}
+
+
+
+input[type="text"] {
+  width: 300px;
+  box-sizing: border-box;
+  height: 32px;
+  padding: 4px 8px 4px 8px;
+  background: #FFFFFF;
+  border-color: #232323;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 3px 3px 3px 3px;
+  font-family: "Helvetica", serif;
+  font-weight: 400;
+  font-size: 14px;
+  text-align: left;
+}
+
+
+#leftside input {
+  margin: 5px
+}
+
+#leftside {
+  display: flex;
+  align-items: flex-start;
+  width: 50%;
+  padding-top: 30px;
+  flex-direction: column;
+}
+
+#rightside div {
+  display: flex;
+  align-items: flex-start;
+  padding: 20px;
+  width: 50%;
+  flex-direction: row;
+}
+
+#sides {
+  display: flex;
+  width: 100%;
+  padding-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+button {
+  width: 300px;
+  height: 32px;
+  padding: 0 10px 0 10px;
+  background: #FFB253;
+  color: #232323;
+  border-color: #232323;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 3px 3px 3px 3px;
+  font-family: "Helvetica", serif;
+  font-weight: 400;
+  font-size: 14px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background: #FFE3AE;;
+}
+
+#share {
+  height: 150px;
+  width: 300px;
+  margin-left: 5px;
+}
+
+
+textarea::placeholder {
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+
+#sides button, #import {
+  margin: 5px
+}
+
+#leftside p {
+  width: 100%;
+}
+
+#newcard {
+  display: flex;
+  justify-content: flex-start;
+  gap: 5px;
+  padding-bottom: 5px;
+  flex-wrap: wrap;
+  padding-left: 5px;
+}
+
+#edit {
+  display: flex;
+
+  gap: 25px;
+}
+p {
+  padding-top: 4px;
+}
+@media (max-width: 639px) {
+  p {
+    padding-top: 0;
+  }
+}
+
+#file {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.mode {
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+form .ng-invalid {
+  border-left: 5px solid #a94442;
+}
+
+#stat {
+  margin-left: 5px;
+  margin-right: 5px;
+  width: 220px;
+  height: 26px;
+  padding: 0 10px 0 10px;
+  margin-top: 5px;
+  background: #EBEBEB;
+  color: #232323;
+  border-color: #232323;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 3px 3px 3px 3px;
+  font-family: "Helvetica", serif;
+  font-weight: 400;
+  font-size: 14px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+#stat:hover {
+  background: #E61610;
+  color: #ffffff;
+}
+
+#forStatBtn {
+  display: flex;
+  justify-content: flex-end;
+}

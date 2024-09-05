@@ -1,0 +1,48 @@
+<div id="top">
+  <div id="topLeft">
+    <img src="assets/logo.png" alt="logo" routerLink="/home">
+    <h3>Vokabeltrainer</h3>
+  </div>
+</div>
+
+<div class="container">
+  <div [hidden]="submitted">
+    <h1>Konto erstellen</h1>
+    <form [formGroup]="signupForm" (submit)="signUp()">
+      <input autocomplete="on" type="text" id="username" class="form-control" required formControlName="username" placeholder="Username">
+      <div *ngIf="isUsernameInvalid" class="alert alert-danger">
+        <p class="alert1" *ngIf="username?.errors?.['required']">Username must not be empty</p>
+        <p class="alert1" *ngIf="username?.errors?.['minlength']">Username must be at least {{ username?.errors?.['minlength'].requiredLength }} characters long</p>
+        <p class="alert1" *ngIf="username?.errors?.['maxlength']">Username must not exceed {{ username?.errors?.['maxlength'].requiredLength }} characters</p>
+        <p *ngIf="username?.errors?.['pattern']">Invalid pattern</p>
+      </div>
+<br>
+
+      <input  autocomplete="on" type="{{ hidePassword ? 'password' : 'text' }}"  id="password" required class="form-control" formControlName="password" placeholder="Password">
+      <div *ngIf="isPasswordInvalid" class="alert alert-danger">
+        <p class="alert1" *ngIf="password?.errors?.['required']">Password must not be empty</p>
+        <p class="alert1" *ngIf="password?.errors?.['minlength']">Password must be at least {{ password?.errors?.['minlength'].requiredLength }} characters long</p>
+        <p class="alert1" *ngIf="password?.errors?.['maxlength']">Password must not exceed {{ password?.errors?.['maxlength'].requiredLength }} characters</p>
+      </div>
+<br>
+
+      <input autocomplete="on" type="{{ hidePassword ? 'password' : 'text' }}" class="form-control" id="passwordRepeat" required
+             formControlName="passwordRepeat" placeholder="Confirm Password">
+      <div *ngIf="isPassword2Invalid || gibtschon" class="alert alert-danger">
+        <p class="alert1" *ngIf="passwordRepeat?.errors?.['required']">Confirmation password must not be empty</p>
+        <p class="alert1" *ngIf="signupForm?.errors?.['passwordMismatch'] && !passwordRepeat?.errors?.['required']">Passwords must match</p>
+        <p class="alert1" *ngIf="gibtschon">Diesen User gibt es schon!</p>
+      </div>
+
+<br>
+      <button id="login" [disabled]="!signupForm.valid" type="submit">Sign Up</button>
+
+      <br>
+      <p>Sie haben bereits ein Konto? <a routerLink="/login">Anmelden</a></p>
+    </form>
+  </div>
+</div>
+
+<div id="foot">
+  <p id="bedingungen" [routerLink]="['/bedingungen']">Nutzungsbedingungen | Datenschutzerklärung</p>
+</div>

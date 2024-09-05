@@ -1,0 +1,44 @@
+<div id="top">
+  <div id="topLeft">
+    <img src="assets/logo.png" alt="logo" routerLink="/home">
+    <h3>Vokabeltrainer</h3>
+  </div>
+</div>
+<div id="body">
+  <div id="left">
+    <div class="vocab-box">
+      <h2>Example 1</h2>
+      <p>20 Vokabeln</p>
+    </div>
+
+    <div class="vocab-box">
+      <h2>Example 2</h2>
+      <p>35 Vokabeln</p>
+    </div>
+
+    <div class="vocab-box">
+      <h2>Example 3</h2>
+      <p>23 Vokabeln</p>
+    </div>
+
+    <div class="vocab-box">
+      <h2>Example 4</h2>
+      <p>26 Vokabeln</p>
+    </div>
+  </div>
+
+
+  <div id="right">
+    <div id="logo">
+      <img src="assets/logo.png" alt="logo">
+    </div>
+    <div id="btngroup">
+      <button [routerLink]="['/login']">LOG IN</button>
+      <button [routerLink]="['/signup']">SIGN UP</button>
+    </div>
+    <div id="foot">
+      <p [routerLink]="['/bedingungen']" id="bedingungen">Nutzungsbedingungen | Datenschutzerklärung</p>
+    </div>
+  </div>
+</div>
+

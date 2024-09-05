@@ -1,0 +1,45 @@
+<div id="top">
+  <div id="topLeft">
+    <img src="assets/logo.png" alt="logo" routerLink="/home">
+    <h3>Vokabeltrainer</h3>
+  </div>
+</div>
+
+<div id="firstline"><h1>Neues Deck erstellen</h1>
+  <button [routerLink]="['/home']">Abbrechen</button>
+</div>
+<form #newdeckForm="ngForm" (ngSubmit)="create()">
+  <div class="form-group" id="sides">
+    <div id="leftside">
+      <input type="text" placeholder="Beschreibung" [(ngModel)]="deck.description" required name="beschreibung">
+      <input type="text" placeholder="Sprache" [(ngModel)]="deck.language" required name="sprache">
+      <button type="submit" [disabled]="!newdeckForm.form.valid">Deck speichern</button>
+    </div>
+    <div id="rightside">
+      <div id="edit">
+        <label class="switch">
+          <input type="checkbox" class="checkbox" [(ngModel)]="deck.editable" name="editable">
+          <span class="slider"></span>
+        </label>
+        <p>Bearbeitbar für andere User</p>
+      </div>
+      <textarea type="text" name="textarea" placeholder="Teilen mit anderen Usern. Trennzeichen ;" id="share"
+                [(ngModel)]="shared"></textarea>
+    </div>
+  </div>
+</form>
+<hr>
+<h1>Karten bearbeiten</h1>
+<form #newcardForm="ngForm" (ngSubmit)="addCard()">
+  <div id="newcard">
+    <input type="text" placeholder="Front" name="front" required [(ngModel)]="newCard.front">
+    <input type="text" placeholder="Back" name="back" required [(ngModel)]="newCard.back">
+    <button type="submit" [disabled]="!newcardForm.form.valid">Karte Hinzufügen</button>
+  </div>
+</form>
+<input id="file" type="file" (change)="onFileSelect($event)" accept=".csv">
+<button id="import" (click)="upload()">Von CSV importieren</button>
+
+<ng-container *ngFor="let card of cards">
+  <app-flashcard-item [card]="card" (edit)="edit($event)" (delete)="delete($event)"></app-flashcard-item>
+</ng-container>

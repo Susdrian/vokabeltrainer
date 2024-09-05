@@ -1,0 +1,32 @@
+<div id="top">
+  <div id="topLeft">
+    <img src="assets/logo.png" alt="logo" routerLink="/home">
+    <h3>Vokabeltrainer</h3>
+  </div>
+</div>
+<div class="container">
+  <div [hidden]="submitted">
+    <h1>Willkommen zurück</h1>
+    <form (submit)="login()" #loginfrom="ngForm">
+
+      <input autocomplete="on" type="text" class="form-control" id="username" required [(ngModel)]="model.username" placeholder="Username" name="username" #username="ngModel">
+      <div [hidden]="username.valid || username.pristine" class="alert alert-danger">
+        <p class="alert1">Username must not be empty</p>
+      </div>
+      <br>
+      <input  autocomplete="on" type="password" class="form-control" id="password" required [(ngModel)]="model.password" placeholder="Password" name="password" #password="ngModel">
+      <div [hidden]="password.valid || username.pristine" class="alert alert-danger">
+        <p *ngIf="!logincheck" class="alert1">Password must not be empty</p>
+        <p *ngIf="logincheck" class="alert1">Username or Password is incorrect</p>
+      </div>
+      <br>
+      <button id="login" [disabled]="!loginfrom.form.valid" type="submit">Login</button>
+      <br>
+      <p>Sie haben noch kein Konto? <a [routerLink]="['/signup']">Registrieren</a></p>
+    </form>
+  </div>
+
+</div>
+<div id="foot">
+  <p id="bedingungen" [routerLink]="['/bedingungen']">Nutzungsbedingungen | Datenschutzerklärung</p>
+</div>

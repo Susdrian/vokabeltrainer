@@ -1,0 +1,63 @@
+#top {
+  display: flex;
+  justify-content: space-between;
+}
+
+#topLeft {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#center {
+  min-width: 110px;
+}
+
+p {
+  margin: 0;
+  padding-left: 5px;
+  padding-right: 5px;
+  text-align: center;
+}
+
+#head {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 10px 0 10px;
+  flex-wrap: wrap;
+}
+
+.newDeckBtn {
+  width: 164px;
+  height: 32px;
+  padding: 0 10px 0 10px;
+  margin-bottom: 10px;
+  background: #FEC63D;
+  color: #232323;
+  border-color: #232323;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 3px 3px 3px 3px;
+  font-family: "Helvetica", serif;
+  font-weight: 400;
+  font-size: 14px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.newDeckBtn:hover {
+  background: #fa930a;
+}
+
+.decks {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.vocab-box {
+  margin-bottom: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
+}

@@ -1,0 +1,43 @@
+<div id="top">
+  <div id="topLeft">
+    <img src="assets/logo.png" alt="logo" routerLink="/home">
+    <h3>Vokabeltrainer</h3>
+  </div>
+</div>
+
+<div class="header">
+  <div class="header-content">
+    <h1>{{deck.description}}</h1>
+    <div class="progress">
+      <div class="progress-bar bg-warning" role="progressbar" [style.width]="progressWidth" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+  </div>
+</div>
+<div class="test">
+
+    <div *ngIf="!finished" (click)="show()" [class.flipped]="isFlipped" class="card vocabelbox" [style.height.px]="getCardHeight()" [style.width.%]="getCardWidth()">
+      <div class="front ">
+        <p *ngIf="cards?.[count]">{{cards[count].front}}</p>
+      </div>
+      <div class="back ">
+        <p *ngIf="cards?.[count]">{{cards[count].back}}</p>
+      </div>
+    </div>
+
+  <div *ngIf="finished">
+    <button class="finished" *ngIf="finished" (click)="fertig()">Finished</button>
+    <button class="again" *ngIf="wrongs" (click)="wrongFlashcardsagain()">Do wrong again</button>
+    <div class="infos2">
+    <p>{{richtig}} richtig</p>
+      <p>-</p>
+      <p>{{falsch}} falsch</p>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!finished" class="infos">
+  <p class="richtig">{{richtig}} richtig</p>
+  <button  class="buttonright" [disabled]="finished" (click)="right()">richtig</button>
+  <button  class="buttonwrong" [disabled]="finished" (click)="wrong()">falsch</button>
+  <p class="falsch">{{falsch}} falsch</p>
+</div>

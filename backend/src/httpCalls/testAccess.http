@@ -1,0 +1,7 @@
+POST localhost:7000/api/access/approve
+Content-Type: application/json
+
+{
+  "deckid": 16,
+  "userid": 8
+}

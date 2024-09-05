@@ -1,0 +1,22 @@
+<div id="top">
+  <div id="topLeft">
+    <img src="assets/logo.png" alt="logo" routerLink="/home">
+    <h3>Vokabeltrainer</h3>
+  </div>
+  <div id="center">
+    <p>Willkommen {{ user?.username }}!</p>
+    <p>Letzter Login: {{ user?.lastlogin | date:'dd.MM.yyyy HH:mm:ss' }}</p>
+  </div>
+  <button class="logoutBtn" [routerLink]="['/main']" (click)="logout()">LOG OUT</button>
+</div>
+
+<div id="head">
+  <h2>Deine Decks</h2>
+  <button class="newDeckBtn" [routerLink]="['/newdeck']">Neues Deck erstellen</button>
+</div>
+<div class="decks">
+  <div *ngFor="let deck of decks" class="vocab-box" [routerLink]="['/editdeck/', deck.id]">
+    <h2>{{ deck.description }}</h2>
+    <p>{{ vocabAmount(deck) }} Vokabel{{ vocabAmount(deck) === 1 ? '' : 'n' }}</p>
+  </div>
+</div>

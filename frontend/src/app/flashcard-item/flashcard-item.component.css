@@ -1,0 +1,79 @@
+#card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  border-bottom: solid 1px #FFB253;
+  padding: 2px;
+  margin: 5px;
+}
+
+h3 {
+  margin: 0;
+  flex-grow: 1;
+  white-space: normal;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+#delete {
+  width: 92px;
+  height: 25px;
+  padding: 0 10px 0 10px;
+  background: #E61610;
+  color: #FFFFFF;
+  border-color: #FFFFFF;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 3px 3px 3px 3px;
+  font-family: "Helvetica", serif;
+  font-weight: 400;
+  font-size: 14px;
+  text-align: center;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+#edit {
+  width: 88px;
+  height: 25px;
+  padding: 0 10px 0 10px;
+  background: #1464F6;
+  color: #FFFFFF;
+  border-color: #FFFFFF;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 3px 3px 3px 3px;
+  font-family: "Helvetica", serif;
+  font-weight: 400;
+  font-size: 14px;
+  text-align: center;
+  margin-right: 5px;
+}
+#stat {
+  display: flex;
+  gap: 5px;
+}
+
+#stat button {
+  width: 173px;
+  height: 26px;
+  padding: 0 10px 0 10px;
+  margin-top: 5px;
+  background: #EBEBEB;
+  color: #232323;
+  border-color: #232323;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 3px 3px 3px 3px;
+  font-family: "Helvetica", serif;
+  font-weight: 400;
+  font-size: 14px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+#stat button:hover {
+  background: #E61610;
+  color: #ffffff;
+}
+

@@ -1,0 +1,11 @@
+POST localhost:7000/api/flashcard/bulk
+Content-Type: application/json
+
+[
+  {
+    "id": 0,
+    "deckid": 1,
+    "front": "h",
+    "back": "hh"
+  }
+]

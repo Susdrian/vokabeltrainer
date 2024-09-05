@@ -1,0 +1,66 @@
+@import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');
+
+
+
+h1 {
+  text-align: center;
+}
+#foot {
+  bottom: 0;
+  text-align: center;
+  height: 50px;
+  padding-bottom: 50px;
+  position: absolute;
+  width: 100%;
+}
+
+input{
+  width: 228px;
+  height: 32px;
+  background: #FFFFFF;
+  border-color: #232323;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 3px 3px 3px 3px;
+  font-family: "Helvetica", serif;
+  font-weight: 400;
+  font-size: 14px;
+  text-align: left;
+  margin-bottom: 3px;
+}
+
+a{
+  color: #FFA834 ;
+}
+form{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#flexCheckDefault{
+
+}
+
+
+
+.alert1{
+  width: 197px;
+  height: 30px;
+  font-weight: 400;
+  font-size: 14px;
+  text-align: left;
+}
+.eye-icon {
+  cursor: pointer;
+}
+
+.eye-icon i {
+  margin-left: -25px;
+  position: relative;
+  z-index: 2;
+}
+#bedingungen:hover {
+  color: #FFA834;
+  cursor: pointer;
+}

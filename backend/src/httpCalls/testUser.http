@@ -1,0 +1,7 @@
+POST localhost:7000/api/user/
+Content-Type: application/json
+
+{"username":"user5", "password": "hashed"}
+
+###
+GET localhost:7000/api/user/2
