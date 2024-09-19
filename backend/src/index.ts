@@ -7,7 +7,6 @@ import * as expressWinston from 'express-winston';
 import express, {Express} from "express";
 import cors from "cors";
 import helmet from "helmet";
-import {ProductRouter} from "./product/product.router";
 import {PgPool} from "./pg.pool";
 import "express-async-errors";
 import {DeckRouter} from "./deck/deck.router";
