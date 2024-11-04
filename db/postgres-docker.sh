@@ -1,5 +1,6 @@
 docker run \
 --name postgres \
+--network backend-network \
 -e POSTGRES_PASSWORD=pizza \
 -e POSTGRES_USER=funghi \
 -e POSTGRES_DB=wrong \
