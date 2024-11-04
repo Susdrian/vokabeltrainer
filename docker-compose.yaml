@@ -1,0 +1,43 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    networks:
+      - vokabeltrainer-net
+    depends_on:
+      - database
+    env_file:
+      - ./backend/.env
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "4200:4200"
+    networks:
+      - vokabeltrainer-net
+    depends_on:
+      - backend
+
+  database:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: vokabeltrainer
+    ports:
+      - "5432:5432"
+    networks:
+      - vokabeltrainer-net
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+networks:
+  vokabeltrainer-net:
+
+volumes:
+  postgres-data:
