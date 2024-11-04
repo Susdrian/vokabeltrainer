@@ -5,4 +5,5 @@ docker run \
 -e POSTGRES_DB=wrong \
 --mount type=volume,source=pgdata,target=/var/lib/postgresql/data \
 --mount type=bind,source=$(pwd)/init-scripts,target=/docker-entrypoint-initdb.d \
--d postgres
+-d postgres \
+--network database_network
