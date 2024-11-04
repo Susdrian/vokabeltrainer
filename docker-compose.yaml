@@ -4,11 +4,11 @@ services:
       context: ./backend
       dockerfile: Dockerfile
     ports:
-      - "3000:3000"
+      - "8000:8000"
     networks:
       - vokabeltrainer-net
     depends_on:
-      - database
+      - db
     env_file:
       - ./backend/.env
 
@@ -23,18 +23,19 @@ services:
     depends_on:
       - backend
 
-  database:
-    image: postgres:13
+  db:
+    image: postgres:17
     environment:
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: admin
-      POSTGRES_DB: vokabeltrainer
+      POSTGRES_USER: nodepg
+      POSTGRES_PASSWORD: nodepg
+      POSTGRES_DB: postgres
     ports:
       - "5432:5432"
     networks:
       - vokabeltrainer-net
     volumes:
       - postgres-data:/var/lib/postgresql/data
+      - ./db/init-scripts:/docker-entrypoint-initdb.d
 
 networks:
   vokabeltrainer-net:
