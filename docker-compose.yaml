@@ -27,7 +27,7 @@ services:
     image: postgres:17
     environment:
       POSTGRES_USER: nodepg
-      POSTGRES_PASSWORD: nodepg
+      POSTGRES_PASSWORD: nodepgw
       POSTGRES_DB: postgres
     ports:
       - "5432:5432"
